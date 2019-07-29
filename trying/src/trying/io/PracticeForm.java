@@ -5,6 +5,8 @@
  */
 package trying.io;
 
+import java.util.Timer;
+
 /**
  *
  * @author Asus
@@ -14,8 +16,14 @@ public class PracticeForm extends javax.swing.JFrame {
     /**
      * Creates new form PracticeForm
      */
+    
     // created object from basic class to handle the process
     BasicClass basicClass=new BasicClass();
+    
+    // created object from the timer 
+     Timer timer=new Timer();
+     
+     
     public PracticeForm() {
         initComponents();
     }
