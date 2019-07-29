@@ -250,6 +250,9 @@ public class PracticeForm extends javax.swing.JFrame {
                     userInputCodeTextArea.setEditable(false); // transform the textArea into non editiable
                     timer.cancel();
                     basicClass.setNumberOfWordsPerMin(); // set the typing speed
+                    YourResultForm yourResultObject=new YourResultForm();
+                    yourResultObject.setVisible(true);
+ 
                 }
               
             }
