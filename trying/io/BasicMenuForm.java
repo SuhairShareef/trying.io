@@ -144,7 +144,8 @@ public class BasicMenuForm extends javax.swing.JFrame {
     }//GEN-LAST:event_practiceButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        
+      // in this the programe will exit and the whole process will stop 
+            this.dispose();  
     }//GEN-LAST:event_exitButtonActionPerformed
 
     /**
