@@ -173,7 +173,11 @@ public class YourResultForm extends javax.swing.JFrame {
     public  void setNumberOfErrors(int numberOfErrors){
         numberOfErrorsLabel.setText(numberOfErrors+ " Error");
     }
-
+    
+    // method to set the errorListTextArea from other classes
+    public  void  setErrorListTextArea(String errorList){
+        errorListTextArea.setText(errorList);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea errorListTextArea;
     private javax.swing.JLabel jLabel1;
