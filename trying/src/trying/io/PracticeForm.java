@@ -246,6 +246,9 @@ public class PracticeForm extends javax.swing.JFrame {
                timeLabel.setText("00:"+timeRemain);
                userInputCodeTextArea.setEditable(true); // to allow the user typing
                 timeRemain--; // update the time remain
+                if(timeRemain==0){
+                    
+                }
               
             }
         };
