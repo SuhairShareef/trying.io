@@ -136,7 +136,10 @@ public class BasicMenuForm extends javax.swing.JFrame {
     }//GEN-LAST:event_uploadSourceCodeButtonActionPerformed
 
     private void practiceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_practiceButtonActionPerformed
-        
+     //To create a new Form that leads to practice choices form 
+        PracticeChoices practice = new PracticeChoices();
+        practice.setVisible(true);
+        this.dispose();   
 
     }//GEN-LAST:event_practiceButtonActionPerformed
 
