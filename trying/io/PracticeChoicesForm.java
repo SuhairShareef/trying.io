@@ -8,6 +8,8 @@ package trying.io;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import javax.swing.JOptionPane;
+import static trying.io.PracticeChoices.readFileAsString;
 
 /**
  *
@@ -162,7 +164,23 @@ public class PracticeChoicesForm extends javax.swing.JFrame {
     }//GEN-LAST:event_languageComboBoxActionPerformed
 
     private void startPracticeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPracticeButtonActionPerformed
-       
+     // this method will take the user to practice form
+        PracticeForm practice = new PracticeForm();
+        String language = languageComboBox.getSelectedItem().toString();
+        String time = timeComboBox.getSelectedItem().toString();
+        //This will returns the values that was chosen by the user to practice and I'll use it to print it on the Practice form
+        practice.languageLabel.setText(language);
+        practice.timeLabel.setText(time);
+        String filePath = "src\\programmingLanguages\\"+language+".txt";
+        try {
+            practice.originalCodeTextArea.setText(readFileAsString(filePath));
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+        practice.setVisible(true);
+        this.dispose();
+        //this will show the practice form  
     }//GEN-LAST:event_startPracticeButtonActionPerformed
 
     /**
