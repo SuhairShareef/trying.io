@@ -167,6 +167,12 @@ public class YourResultForm extends javax.swing.JFrame {
     public  void setTypingSpeedLabel(int typingSpeed){
         typingSpeedLabel.setText(typingSpeed+" word per minute.");
     }
+    
+    
+    // method to set the numberOfErrorsLabel from other classes
+    public  void setNumberOfErrors(int numberOfErrors){
+        numberOfErrorsLabel.setText(numberOfErrors+ " Error");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea errorListTextArea;
