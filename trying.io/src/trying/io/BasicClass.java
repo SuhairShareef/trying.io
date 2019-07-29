@@ -66,5 +66,16 @@ public class BasicClass {
         this.numberOfTypedChars = numberOfTypedChars;
     }
     
+    // method returns integer value represent number of uncorrected characters and takes no parameter 
+    public int getNumberOfUncorrectChars() {
+        return numberOfUncorrectChars;
+    }
+
+    
+    // method that takes integer value represent number of uncorrected characters and there is no return valu
+    public void setNumberOfUncorrectChars(int NumberOfUncorrectChars) {
+        this.numberOfUncorrectChars=numberOfUncorrectChars;
+    }
+    
        
 }
