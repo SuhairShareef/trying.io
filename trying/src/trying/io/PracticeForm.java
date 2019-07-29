@@ -237,9 +237,11 @@ public class PracticeForm extends javax.swing.JFrame {
         
         //create TimerTask object to do a task while the timer is on
         TimerTask timerTask=new  TimerTask() {
+            // variable to get the time remaining
+            int timeRemain=59;
             @Override
             public void run() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+               
             }
         };
     }//GEN-LAST:event_startButtonActionPerformed
