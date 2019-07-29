@@ -7,7 +7,7 @@ package trying.io;
 
 /**
  *
- * @author Asus
+ * @author Suhair Shareef
  */
 public class PracticeForm extends javax.swing.JFrame {
 
@@ -199,7 +199,10 @@ public class PracticeForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        
+        // This will exit to the basic menu
+        BasicMenuForm basic = new BasicMenuForm();
+        this.dispose();
+        basic.setVisible(true);
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
