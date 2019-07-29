@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
-  * This form is created to upload a source file code and save it to be able to start practising that code 
+ * This form is created to upload a source file code and save it to be able to start practising that code 
  * @author Suhair Shareef
  */
 public class UploadSourceCodeForm extends javax.swing.JFrame {
@@ -174,7 +174,16 @@ public class UploadSourceCodeForm extends javax.swing.JFrame {
 
     private void startPracticeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPracticeButtonActionPerformed
         // This button will lead the user right away to start practicing 
-        
+        PracticeForm practice = new PracticeForm();
+        practice.originalCodeTextArea.setText(codeTextArea.getText());
+        //Returns the value of the text area that contains the code and set it in the originalCode text area in the practice form 
+        String langauage =languageComboBox.getSelectedItem().toString();
+        practice.languageLabel.setText(langauage);
+        //Returns the programming language the user has chosen and set it on languageLabel in the practice form 
+        practice.setVisible(true);
+        //Show the practice form
+        this.setVisible(false); 
+        //hide the uploadSourceCode form
     }//GEN-LAST:event_startPracticeButtonActionPerformed
 
     private void languageComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_languageComboBoxActionPerformed
