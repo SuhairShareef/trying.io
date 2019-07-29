@@ -20,4 +20,7 @@ public class BasicClass {
     
     //member varible that stores number of all typed characters which needed for calculate number of words per minute and display in the result form
     private int numberOfTypedChars;
+    
+    // member variable that stores number of uncorrected characters needed for calculate number of words per minute  and display in the result form
+    private int numberOfUncorrectChars;
 }
