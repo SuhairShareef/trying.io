@@ -244,6 +244,7 @@ public class PracticeForm extends javax.swing.JFrame {
             public void run() {
                // change the text in the time label every second
                timeLabel.setText("00:"+timeRemain);
+               userInputCodeTextArea.setEditable(true); // to allow the user typing
             }
         };
     }//GEN-LAST:event_startButtonActionPerformed
