@@ -5,6 +5,7 @@
  */
 package trying.io;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Timer;
 
@@ -242,6 +243,18 @@ public class PracticeForm extends javax.swing.JFrame {
         
         // update the number of key typed by one
         basicClass.setNumberOfTypedChars(basicClass.getNumberOfTypedChars()+1);
+        
+        // track the key press if it is back space and call the compare method to set errors and update the current position
+        if(userTypedCharacter!=KeyEvent.VK_BACK_SPACE){
+            currentCharPosition++;
+           boolean equalChars =basicClass.compare( userTypedCharacter,getOriginalTextChars(currentCharPosition));
+           if(!equalChars){
+               errorLabel.setText("Error"); 
+           }
+        } 
+        else
+           currentCharPosition--;
+        
     }//GEN-LAST:event_userInputCodeTextAreaKeyTyped
 
     /**
