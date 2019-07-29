@@ -235,13 +235,15 @@ public class PracticeForm extends javax.swing.JFrame {
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         // TODO add your handling code here:
         
-        //create TimerTask object to do a task while the timer is on
+        
+        // create TimerTask object to do a task while the timer is on
         TimerTask timerTask=new  TimerTask() {
             // variable to get the time remaining
             int timeRemain=59;
             @Override
             public void run() {
-               
+               // change the text in the time label every second
+               timeLabel.setText("00:"+timeRemain);
             }
         };
     }//GEN-LAST:event_startButtonActionPerformed
