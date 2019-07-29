@@ -34,5 +34,25 @@ public class BasicClass {
         this.numberOfWordsPerMin=0;
         this.numberOfTypedChars=0;
         }
+        
+    // method that returns all uncorected errors as keys and values , key represent uncorected character and value number of error for each character
+    public String getCharErrors() {
+        String errorList="";
+        for(Character key : charErrors.keySet())
+            errorList=errorList+("Character<"+key+" >: "+this.charErrors.get(key)+" times\n");
+        return errorList;          
+    }
+    
+    
+    // method for  setting list of errors the error as key and value that takes uncorrected char (key) and  check if the character exist in the map it increases the value by one else assigns the number of error equal 1
+    public void setCharErrors(char errorChar) {
+        if(charErrors.containsKey(errorChar)){
+             int numberOfError =charErrors.get(errorChar);
+             charErrors.put(errorChar, numberOfError+1);
+        }
+        else{         
+            charErrors.put(errorChar, 1);
+        } 
+    }
        
 }
