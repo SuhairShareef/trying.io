@@ -23,6 +23,9 @@ public class PracticeForm extends javax.swing.JFrame {
     // created object from the timer 
      Timer timer=new Timer();
      
+     // variable to get the index of the  current original character the user is typing
+     int currentCharPosition=-1;
+     
      
     public PracticeForm() {
         initComponents();
