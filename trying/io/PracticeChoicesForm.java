@@ -5,6 +5,12 @@
  */
 package trying.io;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+import static trying.io.PracticeChoices.readFileAsString;
+
 /**
  *
  * @author Asus
@@ -130,12 +136,51 @@ public class PracticeChoicesForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /*
+    This method is created to read from a file until it reach a sertain point 
+    It takes a String as an argument wich refers to the file path
+    It returns a string that the file contains
+    Throw IOException
+    */
+    public static String readFileAsString(String filePath){ 
+        String text = "";
+     try (FileReader reader = new FileReader("filename.txt");
+             BufferedReader br = new BufferedReader(reader)) {
+             
+            // read line by line
+            String line;
+            while ((line = br.readLine()) != "1********************") {
+                text+= line + "\n";
+            }
+
+        } catch (IOException e) {
+            System.err.format("IOException: %s%n", e);
+        }
+     return text ;
+    }
+    
     private void languageComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_languageComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_languageComboBoxActionPerformed
 
     private void startPracticeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPracticeButtonActionPerformed
-       
+     // this method will take the user to practice form
+        PracticeForm practice = new PracticeForm();
+        String language = languageComboBox.getSelectedItem().toString();
+        String time = timeComboBox.getSelectedItem().toString();
+        //This will returns the values that was chosen by the user to practice and I'll use it to print it on the Practice form
+        practice.languageLabel.setText(language);
+        practice.timeLabel.setText(time);
+        String filePath = "src\\programmingLanguages\\"+language+".txt";
+        try {
+            practice.originalCodeTextArea.setText(readFileAsString(filePath));
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+        practice.setVisible(true);
+        this.dispose();
+        //this will show the practice form  
     }//GEN-LAST:event_startPracticeButtonActionPerformed
 
     /**

@@ -7,7 +7,7 @@ package trying.io;
 
 /**
  *
- * @author Asus
+ * @author Suhair Shareef
  */
 public class PracticeForm extends javax.swing.JFrame {
 
@@ -199,7 +199,10 @@ public class PracticeForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        
+        // This will exit to the basic menu
+        BasicMenuForm basic = new BasicMenuForm();
+        this.dispose();
+        basic.setVisible(true);
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
@@ -242,21 +245,21 @@ public class PracticeForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel cautionLabel;
-    private javax.swing.JLabel errorLabel;
-    private javax.swing.JButton exitButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel languageLabel;
-    private javax.swing.JTextArea originalCodeTextArea;
-    private javax.swing.JButton startButton;
-    private javax.swing.JLabel timeLabel;
-    private javax.swing.JTextArea userInputCodeTextArea;
+    public static javax.swing.JLabel cautionLabel;
+    public static javax.swing.JLabel errorLabel;
+    public static javax.swing.JButton exitButton;
+    public static javax.swing.JLabel jLabel1;
+    public static javax.swing.JLabel jLabel2;
+    public static javax.swing.JLabel jLabel4;
+    public static javax.swing.JLabel jLabel6;
+    public static javax.swing.JLabel jLabel7;
+    public static javax.swing.JPanel jPanel2;
+    public static javax.swing.JScrollPane jScrollPane1;
+    public static javax.swing.JScrollPane jScrollPane2;
+    public static javax.swing.JLabel languageLabel;
+    public static javax.swing.JTextArea originalCodeTextArea;
+    public static javax.swing.JButton startButton;
+    public static javax.swing.JLabel timeLabel;
+    public static javax.swing.JTextArea userInputCodeTextArea;
     // End of variables declaration//GEN-END:variables
 }
