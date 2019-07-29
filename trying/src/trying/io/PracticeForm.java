@@ -106,6 +106,11 @@ public class PracticeForm extends javax.swing.JFrame {
 
         userInputCodeTextArea.setColumns(20);
         userInputCodeTextArea.setRows(5);
+        userInputCodeTextArea.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                userInputCodeTextAreaKeyTyped(evt);
+            }
+        });
         jScrollPane2.setViewportView(userInputCodeTextArea);
 
         jLabel6.setFont(new java.awt.Font("Cambria Math", 0, 18)); // NOI18N
@@ -148,7 +153,7 @@ public class PracticeForm extends javax.swing.JFrame {
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(cautionLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
+                                .addComponent(cautionLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 479, Short.MAX_VALUE)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)))))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
@@ -228,6 +233,10 @@ public class PracticeForm extends javax.swing.JFrame {
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_startButtonActionPerformed
+
+    private void userInputCodeTextAreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_userInputCodeTextAreaKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userInputCodeTextAreaKeyTyped
 
     /**
      * @param args the command line arguments
