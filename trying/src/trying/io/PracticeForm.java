@@ -262,6 +262,7 @@ public class PracticeForm extends javax.swing.JFrame {
               
             }
         };
+        timer.schedule(timerTask, 1000,1000); // schedule the timer to do timerTask every one second for long time
     }//GEN-LAST:event_startButtonActionPerformed
 
     private void userInputCodeTextAreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_userInputCodeTextAreaKeyTyped
