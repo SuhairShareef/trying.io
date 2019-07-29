@@ -8,6 +8,7 @@ package trying.io;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  *
@@ -233,6 +234,14 @@ public class PracticeForm extends javax.swing.JFrame {
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         // TODO add your handling code here:
+        
+        //create TimerTask object to do a task while the timer is on
+        TimerTask timerTask=new  TimerTask() {
+            @Override
+            public void run() {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        };
     }//GEN-LAST:event_startButtonActionPerformed
 
     private void userInputCodeTextAreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_userInputCodeTextAreaKeyTyped
