@@ -5,6 +5,7 @@
  */
 package trying.io;
 
+import java.util.ArrayList;
 import java.util.Timer;
 
 /**
@@ -211,6 +212,15 @@ public class PracticeForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+        //  method to get the current character the user type in the original text area
+        private char  getOriginalTextChars(int index){
+        String orginalText=originalCodeTextArea.getText();
+        ArrayList<Character> orginalChar=new ArrayList<>();
+        for(int i=0;i<orginalText.length();i++){
+            orginalChar.add(orginalText.charAt(i));
+        }
+        return orginalChar.get(index);
+    }
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         
     }//GEN-LAST:event_exitButtonActionPerformed
