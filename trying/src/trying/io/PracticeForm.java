@@ -334,8 +334,8 @@ public class PracticeForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel languageLabel;
-    private javax.swing.JTextArea originalCodeTextArea;
+    public javax.swing.JLabel languageLabel;
+    public javax.swing.JTextArea originalCodeTextArea;
     private javax.swing.JButton startButton;
     private javax.swing.JLabel timeLabel;
     private javax.swing.JTextArea userInputCodeTextArea;
