@@ -248,6 +248,7 @@ public class PracticeForm extends javax.swing.JFrame {
                 timeRemain--; // update the time remain
                 if(timeRemain==0){
                     userInputCodeTextArea.setEditable(false); // transform the textArea into non editiable
+                    timer.cancel();
                 }
               
             }
