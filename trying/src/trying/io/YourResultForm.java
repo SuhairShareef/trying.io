@@ -162,6 +162,11 @@ public class YourResultForm extends javax.swing.JFrame {
             }
         });
     }
+    
+    // method to set the typingSpeedLabel from other classes
+    public  void setTypingSpeedLabel(int typingSpeed){
+        typingSpeedLabel.setText(typingSpeed+" word per minute.");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea errorListTextArea;
