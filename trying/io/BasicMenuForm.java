@@ -129,16 +129,23 @@ public class BasicMenuForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void uploadSourceCodeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadSourceCodeButtonActionPerformed
-       
+       // To create a new Frame that leads to upload source code frame 
+        UploadSourceCode upload = new UploadSourceCode();//creatign an item from th upload frame 
+        upload.setVisible(true);//this will show the frame 
+        this.setVisible(false); 
     }//GEN-LAST:event_uploadSourceCodeButtonActionPerformed
 
     private void practiceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_practiceButtonActionPerformed
-        
+     //To create a new Form that leads to practice choices form 
+        PracticeChoices practice = new PracticeChoices();
+        practice.setVisible(true);
+        this.dispose();   
 
     }//GEN-LAST:event_practiceButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        
+      // in this the programe will exit and the whole process will stop 
+            this.dispose();  
     }//GEN-LAST:event_exitButtonActionPerformed
 
     /**
