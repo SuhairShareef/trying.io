@@ -77,5 +77,16 @@ public class BasicClass {
         this.numberOfUncorrectChars=numberOfUncorrectChars;
     }
     
+    // method that returns integer value represent number of words per minute  and takes no parameter
+    public int getNumberOfWordsPerMin() {
+        return numberOfWordsPerMin;
+    }
+    
+
+    //method for setting number of words per minute  using number of typed characters and number of uncorrected characters  no return value  
+    public void setNumberOfWordsPerMin() {
+        this.numberOfWordsPerMin = (numberOfTypedChars/5)-numberOfUncorrectChars;
+    }
+    
        
 }
