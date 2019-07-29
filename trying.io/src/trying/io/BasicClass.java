@@ -17,4 +17,7 @@ public class BasicClass {
     
     // member variable that store uncorrected character  as "key" and number of errors for each as "value"
     private HashMap<Character,Integer> charErrors;
+    
+    //member varible that stores number of all typed characters which needed for calculate number of words per minute and display in the result form
+    private int numberOfTypedChars;
 }
