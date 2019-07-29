@@ -5,9 +5,15 @@
  */
 package trying.io;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author Asus
+ * This form is created to upload a source file code and save it to be able to start practising that code 
+ * @author Suhair Shareef
  */
 public class UploadSourceCodeForm extends javax.swing.JFrame {
 
@@ -167,18 +173,53 @@ public class UploadSourceCodeForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void startPracticeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPracticeButtonActionPerformed
-
+        // This button will lead the user right away to start practicing 
+        PracticeForm practice = new PracticeForm();
+        practice.originalCodeTextArea.setText(codeTextArea.getText());
+        //Returns the value of the text area that contains the code and set it in the originalCode text area in the practice form 
+        String langauage =languageComboBox.getSelectedItem().toString();
+        practice.languageLabel.setText(langauage);
+        //Returns the programming language the user has chosen and set it on languageLabel in the practice form 
+        practice.setVisible(true);
+        //Show the practice form
+        this.setVisible(false); 
+        //hide the uploadSourceCode form
     }//GEN-LAST:event_startPracticeButtonActionPerformed
 
     private void languageComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_languageComboBoxActionPerformed
     }//GEN-LAST:event_languageComboBoxActionPerformed
 
     private void saveButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButton1ActionPerformed
-    
+        //This button will save the code coppied to the text area depending on the langaueg used 
+        String sourceCode = codeTextArea.getText();
+        //Returns the value of the text area that contains the code 
+        String programmingLanguage = languageComboBox.getSelectedItem().toString();
+        //Returns the programming language the user has chosen
+        String filePath = "src\\programmingLanguages\\"+programmingLanguage+".txt";
+        //a variable that has the language chosen path 
+        BufferedWriter writer ;
+        try {
+            writer = new BufferedWriter(new FileWriter(filePath, true)); //Set true for append mode
+            writer.newLine();   //Add new line
+            writer.write(sourceCode+"\n1********************\n");
+            writer.close();
+            
+            JOptionPane.showMessageDialog(this, "Your source code was saved successfully ");
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+         //this will copy the code and save it into the file                     
+        codeTextArea.setText("");
+        languageComboBox.setSelectedIndex(0);
     }//GEN-LAST:event_saveButton1ActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        
+        // this method will return the user the basic menu
+        BasicMenuForm basic = new BasicMenuForm();
+        basic.setVisible(true);
+        //this will show the basic menu
+        this.dispose();
+        //This will exit the uploadSourceCode form
     }//GEN-LAST:event_backButtonActionPerformed
 
     /**
