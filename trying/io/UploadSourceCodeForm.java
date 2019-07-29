@@ -190,7 +190,7 @@ public class UploadSourceCodeForm extends javax.swing.JFrame {
     }//GEN-LAST:event_languageComboBoxActionPerformed
 
     private void saveButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButton1ActionPerformed
-    //This button will save the code coppied to the text area depending on the langaueg used 
+        //This button will save the code coppied to the text area depending on the langaueg used 
         String sourceCode = codeTextArea.getText();
         //Returns the value of the text area that contains the code 
         String programmingLanguage = languageComboBox.getSelectedItem().toString();
@@ -214,7 +214,12 @@ public class UploadSourceCodeForm extends javax.swing.JFrame {
     }//GEN-LAST:event_saveButton1ActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        
+        // this method will return the user the basic menu
+        BasicMenuForm basic = new BasicMenuForm();
+        basic.setVisible(true);
+        //this will show the basic menu
+        this.dispose();
+        //This will exit the uploadSourceCode form
     }//GEN-LAST:event_backButtonActionPerformed
 
     /**
