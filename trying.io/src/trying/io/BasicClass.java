@@ -26,4 +26,13 @@ public class BasicClass {
     
     // member variable that stores number of words per minute which we calculatee from other member variables and display in the result form 
     private int numberOfWordsPerMin;
+    
+    // this method is used to create object of the basic class intialize the member no variables
+        public BasicClass() {
+        this.charErrors=new HashMap<>();
+        this.numberOfUncorrectChars =0;
+        this.numberOfWordsPerMin=0;
+        this.numberOfTypedChars=0;
+        }
+       
 }
