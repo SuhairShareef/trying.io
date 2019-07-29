@@ -252,6 +252,11 @@ public class PracticeForm extends javax.swing.JFrame {
                     basicClass.setNumberOfWordsPerMin(); // set the typing speed
                     YourResultForm yourResultObject=new YourResultForm();
                     yourResultObject.setVisible(true);
+                    
+                    // set the results in the result form
+                    yourResultObject.setTypingSpeedLabel(basicClass.getNumberOfWordsPerMin());
+                    yourResultObject.setNumberOfErrors(basicClass.getNumberOfUncorrectChars());
+                    yourResultObject.setErrorListTextArea(basicClass.getCharErrors());
  
                 }
               
