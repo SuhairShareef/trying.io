@@ -54,5 +54,17 @@ public class BasicClass {
             charErrors.put(errorChar, 1);
         } 
     }
+    
+    //method that return integer represent number of typed characters takes no parameter
+    public int getNumberOfTypedChars() {
+        return numberOfTypedChars;
+    }
+    
+    
+    // method  that takes intger value as parameter represent number of typed characters and there is no return value
+    public void setNumberOfTypedChars(int numberOfTypedChars) {
+        this.numberOfTypedChars = numberOfTypedChars;
+    }
+    
        
 }
