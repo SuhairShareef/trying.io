@@ -83,9 +83,21 @@ public class BasicClass {
     }
     
 
-    //method for setting number of words per minute  using number of typed characters and number of uncorrected characters  no return value  
+    // method for setting number of words per minute  using number of typed characters and number of uncorrected characters  no return value  
     public void setNumberOfWordsPerMin() {
         this.numberOfWordsPerMin = (numberOfTypedChars/5)-numberOfUncorrectChars;
+    }
+    
+    // method return boolean value represent the equality between two passed parameters characetrs and genarate error list and update number of uncorrect words
+    public boolean compare(char userTypedChar, char originalTextChar){
+        boolean equalChars=true;
+        if(userTypedChar!=originalTextChar){
+            numberOfUncorrectChars++;
+            setCharErrors(originalTextChar);
+            equalChars=false;
+        }
+        return  equalChars;
+                     
     }
     
        
