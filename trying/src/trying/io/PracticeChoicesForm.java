@@ -9,7 +9,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JOptionPane;
-import static trying.io.PracticeChoices.readFileAsString;
 
 /**
  *
@@ -171,7 +170,7 @@ public class PracticeChoicesForm extends javax.swing.JFrame {
         //This will returns the values that was chosen by the user to practice and I'll use it to print it on the Practice form
         practice.languageLabel.setText(language);
         practice.timeLabel.setText(time);
-        String filePath = "src\\programmingLanguages\\"+language+".txt";
+        String filePath = "src\\ProgrammingLanguages\\"+language+".txt";
         try {
             practice.originalCodeTextArea.setText(readFileAsString(filePath));
 

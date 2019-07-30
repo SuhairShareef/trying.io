@@ -162,7 +162,22 @@ public class YourResultForm extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    // method to set the typingSpeedLabel from other classes
+    public  void setTypingSpeedLabel(int typingSpeed){
+        typingSpeedLabel.setText(typingSpeed+" word per minute.");
+    }
+    
+    
+    // method to set the numberOfErrorsLabel from other classes
+    public  void setNumberOfErrors(int numberOfErrors){
+        numberOfErrorsLabel.setText(numberOfErrors+ " Error");
+    }
+    
+    // method to set the errorListTextArea from other classes
+    public  void  setErrorListTextArea(String errorList){
+        errorListTextArea.setText(errorList);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea errorListTextArea;
     private javax.swing.JLabel jLabel1;
