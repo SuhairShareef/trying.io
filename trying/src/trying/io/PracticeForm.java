@@ -32,6 +32,7 @@ public class PracticeForm extends javax.swing.JFrame {
      
     public PracticeForm() {
         initComponents();
+        errorLabel.setVisible(false);
     }
 
     /**
@@ -326,6 +327,21 @@ public class PracticeForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JLabel cautionLabel;
+    public static javax.swing.JLabel errorLabel;
     public static javax.swing.JButton exitButton;
+    public static javax.swing.JLabel jLabel1;
+    public static javax.swing.JLabel jLabel2;
+    public static javax.swing.JLabel jLabel4;
+    public static javax.swing.JLabel jLabel6;
+    public static javax.swing.JLabel jLabel7;
+    public static javax.swing.JPanel jPanel2;
+    public static javax.swing.JScrollPane jScrollPane1;
+    public static javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JLabel languageLabel;
+    public static javax.swing.JTextArea originalCodeTextArea;
+    public static javax.swing.JButton startButton;
+    public static javax.swing.JLabel timeLabel;
+    public static javax.swing.JTextArea userInputCodeTextArea;
     // End of variables declaration//GEN-END:variables
 }
