@@ -283,7 +283,7 @@ public class PracticeForm extends javax.swing.JFrame {
             currentCharPosition++;
            boolean equalChars =basicClass.compare( userTypedCharacter,getOriginalTextChars(currentCharPosition));
            if(!equalChars){
-               errorLabel.setText("Error"); 
+               errorLabel.setVisible(true);
            }
         } 
         else
