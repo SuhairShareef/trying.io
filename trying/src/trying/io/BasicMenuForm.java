@@ -130,7 +130,7 @@ public class BasicMenuForm extends javax.swing.JFrame {
 
     private void uploadSourceCodeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadSourceCodeButtonActionPerformed
        // To create a new Frame that leads to upload source code frame 
-        UploadSourceCode upload = new UploadSourceCode();//creatign an item from th upload frame 
+        UploadSourceCodeForm upload = new UploadSourceCodeForm();//creatign an item from th upload frame 
         upload.setVisible(true);//this will show the frame 
         this.setVisible(false); 
     }//GEN-LAST:event_uploadSourceCodeButtonActionPerformed

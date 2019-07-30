@@ -5,6 +5,11 @@
  */
 package trying.io;
 
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+
 /**
  *
  * @author Suhair Shareef
@@ -14,8 +19,20 @@ public class PracticeForm extends javax.swing.JFrame {
     /**
      * Creates new form PracticeForm
      */
+    
+    // created object from basic class to handle the process
+    BasicClass basicClass=new BasicClass();
+    
+    // created object from the timer 
+     Timer timer=new Timer();
+     
+     // variable to get the index of the  current original character the user is typing
+     int currentCharPosition=-1;
+     
+     
     public PracticeForm() {
         initComponents();
+        errorLabel.setVisible(false);
     }
 
     /**
@@ -92,6 +109,11 @@ public class PracticeForm extends javax.swing.JFrame {
 
         userInputCodeTextArea.setColumns(20);
         userInputCodeTextArea.setRows(5);
+        userInputCodeTextArea.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                userInputCodeTextAreaKeyTyped(evt);
+            }
+        });
         jScrollPane2.setViewportView(userInputCodeTextArea);
 
         jLabel6.setFont(new java.awt.Font("Cambria Math", 0, 18)); // NOI18N
@@ -134,7 +156,7 @@ public class PracticeForm extends javax.swing.JFrame {
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(cautionLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
+                                .addComponent(cautionLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 479, Short.MAX_VALUE)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)))))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
@@ -198,6 +220,15 @@ public class PracticeForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+        //  method to get the current character the user type in the original text area
+        private char  getOriginalTextChars(int index){
+        String orginalText=originalCodeTextArea.getText();
+        ArrayList<Character> orginalChar=new ArrayList<>();
+        for(int i=0;i<orginalText.length();i++){
+            orginalChar.add(orginalText.charAt(i));
+        }
+        return orginalChar.get(index);
+    }
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         // This will exit to the basic menu
         BasicMenuForm basic = new BasicMenuForm();
@@ -207,7 +238,58 @@ public class PracticeForm extends javax.swing.JFrame {
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         // TODO add your handling code here:
+        
+        
+        // create TimerTask object to do a task while the timer is on
+        TimerTask timerTask=new  TimerTask() {
+            // variable to get the time remaining
+            int timeRemain=59;
+            @Override
+            public void run() {
+               // change the text in the time label every second
+               timeLabel.setText("00:"+timeRemain);
+               userInputCodeTextArea.setEditable(true); // to allow the user typing
+                timeRemain--; // update the time remain
+                if(timeRemain==0){
+                    userInputCodeTextArea.setEditable(false); // transform the textArea into non editiable
+                    timer.cancel();
+                    basicClass.setNumberOfWordsPerMin(); // set the typing speed
+                    YourResultForm yourResultObject=new YourResultForm();
+                    yourResultObject.setVisible(true);
+                    
+                    // set the results in the result form
+                    yourResultObject.setTypingSpeedLabel(basicClass.getNumberOfWordsPerMin());
+                    yourResultObject.setNumberOfErrors(basicClass.getNumberOfUncorrectChars());
+                    yourResultObject.setErrorListTextArea(basicClass.getCharErrors());
+ 
+                }
+              
+            }
+        };
+        timer.schedule(timerTask, 1000,1000); // schedule the timer to do timerTask every one second for long time
     }//GEN-LAST:event_startButtonActionPerformed
+
+    private void userInputCodeTextAreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_userInputCodeTextAreaKeyTyped
+        // TODO add your handling code here:
+        
+        // get the user typed character
+        char userTypedCharacter=evt.getKeyChar();
+        
+        // update the number of key typed by one
+        basicClass.setNumberOfTypedChars(basicClass.getNumberOfTypedChars()+1);
+        
+        // track the key press if it is back space and call the compare method to set errors and update the current position
+        if(userTypedCharacter!=KeyEvent.VK_BACK_SPACE){
+            currentCharPosition++;
+           boolean equalChars =basicClass.compare( userTypedCharacter,getOriginalTextChars(currentCharPosition));
+           if(!equalChars){
+               errorLabel.setVisible(true);
+           }
+        } 
+        else
+           currentCharPosition--;
+        
+    }//GEN-LAST:event_userInputCodeTextAreaKeyTyped
 
     /**
      * @param args the command line arguments
@@ -256,7 +338,7 @@ public class PracticeForm extends javax.swing.JFrame {
     public static javax.swing.JPanel jPanel2;
     public static javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JScrollPane jScrollPane2;
-    public static javax.swing.JLabel languageLabel;
+    public javax.swing.JLabel languageLabel;
     public static javax.swing.JTextArea originalCodeTextArea;
     public static javax.swing.JButton startButton;
     public static javax.swing.JLabel timeLabel;
