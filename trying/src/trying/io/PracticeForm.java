@@ -12,7 +12,7 @@ import java.util.TimerTask;
 
 /**
  *
- * @author Asus
+ * @author Suhair Shareef
  */
 public class PracticeForm extends javax.swing.JFrame {
 
@@ -229,7 +229,10 @@ public class PracticeForm extends javax.swing.JFrame {
         return orginalChar.get(index);
     }
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        
+        // This will exit to the basic menu
+        BasicMenuForm basic = new BasicMenuForm();
+        this.dispose();
+        basic.setVisible(true);
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
@@ -323,21 +326,6 @@ public class PracticeForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel cautionLabel;
-    private javax.swing.JLabel errorLabel;
-    private javax.swing.JButton exitButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    public javax.swing.JLabel languageLabel;
-    public javax.swing.JTextArea originalCodeTextArea;
-    private javax.swing.JButton startButton;
-    private javax.swing.JLabel timeLabel;
-    private javax.swing.JTextArea userInputCodeTextArea;
+    public static javax.swing.JButton exitButton;
     // End of variables declaration//GEN-END:variables
 }
